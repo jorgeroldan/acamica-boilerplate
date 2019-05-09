@@ -1,23 +1,23 @@
 import React, { Component } from 'react'
-import dayjs from 'dayjs'
+// import dayjs from 'dayjs'
 
 import './index.css'
 import Hero from '../Hero'
-import Filters from '../Filters'
-import Cards from '../Cards'
-import 'dayjs/locale/es'
+// import Filters from '../Filters'
+// import Cards from '../Cards'
+// import 'dayjs/locale/es'
 
-dayjs.locale('es')
+// dayjs.locale('es')
 const API_URL = 'https://wt-8a099f3e7c73b2d17f4e018b6cfd6131-0.sandbox.auth0-extend.com/acamica'
 
 class App extends Component {
   constructor(){
     super()
 
-    this.State = {
+    this.state = {
       date: '',
       hotels: [], 
-      isLoading: false, 
+      isLoading: false
     }
   }
 
@@ -38,36 +38,38 @@ class App extends Component {
     }
   }
 
-  handleChange = event => {
-    const { value } = event.target
-    this.setState({ date: value })
-  }
+  // handleChange = event => {
+  //   const { value } = event.target
+  //   this.setState({ date: value })
+  // }
 
-  parseDate = timestamp => dayjs(timestamp).format('dddd[,] D [de] MMMM [de] YYYY')
+  // parseDate = timestamp => dayjs(timestamp).format('dddd[,] D [de] MMMM [de] YYYY')
 
   render() {
-    const { isLoading, hotels, date } = this.state
+    const { hotels } = this.state
+
     
     return (
       <div>
-        <Hero date={date} handleChange={this.handleChange}/>
+        <Hero /> 
+        {/* <Hero date={date} handleChange={this.handleChange}/> */}
       
-        {isLoading === true && <p>Cargando hoteles</p>}
+        {/* {isLoading === true && <p>Cargando hoteles</p>} */}
 
         {hotels.length > 0 && (
           <ul>
             {hotels.map(hotel => (
               <li key={hotel.slug}>
                 <p>Nombre: {hotel.name}</p>
-                <p>Fecha disponble desde: {this.parseDate(hotel.availabilityFrom)}</p>
-                <p>Fecha disponble hasta: {this.parseDate(hotel.availabilityTo)}</p>
+                {/* <p>Fecha disponble desde: {this.parseDate(hotel.availabilityFrom)}</p>
+                <p>Fecha disponble hasta: {this.parseDate(hotel.availabilityTo)}</p> */}
                 <hr />
               </li>
             ))}
           </ul>
         )}
-        <Filters />
-        <Cards  />
+        {/* <Filters /> */}
+        {/* <Cards  /> */}
       </div>
       
     )
