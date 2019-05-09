@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-// import dayjs from 'dayjs'
+import dayjs from 'dayjs'
 
 import './index.css'
 import Hero from '../Hero'
 // import Filters from '../Filters'
 // import Cards from '../Cards'
-// import 'dayjs/locale/es'
+import 'dayjs/locale/es'
 
-// dayjs.locale('es')
+dayjs.locale('es')
 const API_URL = 'https://wt-8a099f3e7c73b2d17f4e018b6cfd6131-0.sandbox.auth0-extend.com/acamica'
 
 class App extends Component {
@@ -38,12 +38,12 @@ class App extends Component {
     }
   }
 
-  // handleChange = event => {
-  //   const { value } = event.target
-  //   this.setState({ date: value })
-  // }
+  handleChange = event => {
+    const { value } = event.target
+    this.setState({ date: value })
+  }
 
-  // parseDate = timestamp => dayjs(timestamp).format('dddd[,] D [de] MMMM [de] YYYY')
+  parseDate = timestamp => dayjs(timestamp).format('dddd[,] D [de] MMMM [de] YYYY')
 
   render() {
     const { hotels } = this.state
@@ -61,8 +61,8 @@ class App extends Component {
             {hotels.map(hotel => (
               <li key={hotel.slug}>
                 <p>Nombre: {hotel.name}</p>
-                {/* <p>Fecha disponble desde: {this.parseDate(hotel.availabilityFrom)}</p>
-                <p>Fecha disponble hasta: {this.parseDate(hotel.availabilityTo)}</p> */}
+                <p>Fecha disponble desde: {this.parseDate(hotel.availabilityFrom)}</p>
+                <p>Fecha disponble hasta: {this.parseDate(hotel.availabilityTo)}</p>
                 <hr />
               </li>
             ))}
