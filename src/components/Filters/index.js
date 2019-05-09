@@ -1,48 +1,41 @@
-import React, { Component } from 'react'
+import React,  { Component } from 'react'
+// import DateFilter from '../DateFilter'
+// import OptionsFilter from '../OptionsFilter'
 
-class Filters extends Component {
-
-    
-    render() {
-        // const {dateFrom, dateTo, country, room, price} = this.state
-        const { date, handleChange } = this.state
-        return (
-            <input type="date" value={date} onChange={handleChange} />
-            
-            /* <section className='section is-small'>
-                <div className="container">
-                    <div className="select">
-                        <select>
-                            <option>Select dropdown</option>
-                            <option>With options</option>
-                        </select>
-                    </div>
-                    <div className="select">
-                        <select>
-                            <option>Select dropdown</option>
-                            <option>With options</option>
-                        </select>
-                    </div>
-                    <div className="select">
-                        <select>
-                            <option>Select dropdown</option>
-                            <option>With options</option>
-                        </select>
-                    </div>
-                    <div className="select">
-                        <select>
-                            <option>Select dropdown</option>
-                            <option>With options</option>
-                        </select>
-                    </div>
-                    <div className="select">
-                        <select>
-                            <option>Select dropdown</option>
-                            <option>With options</option>
-                        </select>
-                    </div>
+class Filters extends Component{
+    render(){
+        // const {dateFrom, dateTo, country, price, rooms } = this.props
+        return(
+            {/* <nav className="navbar is-info" style={ {justifyContent: 'center'} }>
+                <div className="navbar-item">
+                    <DateFilter
+                    date={ props.filters.dateFrom}
+                    icon="sign-in-alt" />
                 </div>
-            </section> */
+                <div className="navbar-item">
+                    <DateFilter
+                    date={ props.filters.dateTo }
+                    icon="sign-out-alt" />
+                </div>
+                <div className="navbar-item">
+                    <OptionsFilter
+                    options={ [ {value: undefined, name: 'Todos los países'}, {value: 'Argentina', name: 'Argentina'}, {value: 'Brasil', name: 'Brasil'}, {value: 'Chile', name: 'Chile'}, {value: 'Uruguay', name: 'Uruguay'} ] }
+                    selected={ props.filters.country }
+                    icon="globe" />
+                </div>
+                <div className="navbar-item">
+                    <OptionsFilter
+                    options={ [ {value: undefined, name: 'Cualquier precio'}, {value: 1, name: '$'}, {value: 2, name: '$$'}, {value: 3, name: '$$$'}, {value: 4, name: '$$$$'} ] }
+                    selected={ props.filters.price }
+                    icon="dollar-sign" />
+                </div>
+                <div className="navbar-item">
+                    <OptionsFilter
+                    options={ [ {value: undefined, name: 'Cualquier tamaño'}, {value: 10, name: 'Hotel pequeño'}, {value: 20, name: 'Hotel mediano'}, {value: 30, name: 'Hotel grande'} ] }
+                    selected={ props.filters.rooms }
+                    icon="bed" />
+                </div>
+            </nav> */}
         )
     }
 }

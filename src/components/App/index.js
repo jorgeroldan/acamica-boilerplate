@@ -3,12 +3,34 @@ import dayjs from 'dayjs'
 
 import './index.css'
 import Hero from '../Hero'
+import DateFilter from '../DateFilter'
 // import Filters from '../Filters'
+// import OptionsFilter from '../OptionsFilter'
 // import Cards from '../Cards'
 import 'dayjs/locale/es'
 
+
 dayjs.locale('es')
 const API_URL = 'https://wt-8a099f3e7c73b2d17f4e018b6cfd6131-0.sandbox.auth0-extend.com/acamica'
+
+// function App() {
+//   const filters = {
+//     dateFrom: today, // Proviene del archivo data.js
+//     dateTo: new Date(today.valueOf() + 86400000),
+//     country: undefined,
+//     price: undefined,
+//     rooms: undefined
+//   }
+
+//   return (
+//     <div>
+//       <Hero filters={ filters } />
+//       <Filters filters={ filters } />
+//     </div>
+//   )
+// }
+
+// ReactDOM.render(<App />, document.getElementById('app'))
 
 class App extends Component {
   constructor(){
@@ -52,7 +74,9 @@ class App extends Component {
     return (
       <div>
         <Hero /> 
-        {/* <Hero date={date} handleChange={this.handleChange}/> */}
+        <DateFilter />
+        {/* <Filters /> */}
+        {/* <OptionsFilter date={date} handleChange={this.handleChange} /> */}
       
         {/* {isLoading === true && <p>Cargando hoteles</p>} */}
 
@@ -61,14 +85,14 @@ class App extends Component {
             {hotels.map(hotel => (
               <li key={hotel.slug}>
                 <p>Nombre: {hotel.name}</p>
-                <p>Fecha disponble desde: {this.parseDate(hotel.availabilityFrom)}</p>
-                <p>Fecha disponble hasta: {this.parseDate(hotel.availabilityTo)}</p>
+                {/* <p>Fecha disponble desde: {this.parseDate(hotel.availabilityFrom)}</p>
+                <p>Fecha disponble hasta: {this.parseDate(hotel.availabilityTo)}</p> */}
                 <hr />
               </li>
             ))}
           </ul>
         )}
-        {/* <Filters /> */}
+
         {/* <Cards  /> */}
       </div>
       
